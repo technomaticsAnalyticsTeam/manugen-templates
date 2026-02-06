@@ -1,0 +1,25 @@
+server.port: 8080
+spring:
+  application.name: template-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/manugen
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    hikari.schema: ${DB_SCHEMA:templates}
+  jpa:
+    hibernate.ddl-auto: none
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        default_schema: ${DB_SCHEMA:templates}
+  security:
+    oauth2:
+      resourceserver:
+        opaquetoken:
+          introspection-uri: https://login.yandex.ru/info?format=json
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
