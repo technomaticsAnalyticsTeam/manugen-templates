@@ -1,4 +1,4 @@
-package ru.leyman.manugen.templates;
+package ru.leyman.manugen.templates.utils;
 
 import lombok.experimental.UtilityClass;
 import org.springframework.security.core.context.SecurityContextHolder;

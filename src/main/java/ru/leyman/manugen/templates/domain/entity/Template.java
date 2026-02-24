@@ -17,6 +17,10 @@ public class Template {
 
     private String name;
 
+    private String description;
+
+    private String category;
+
     private String filename;
 
     @Convert(converter = FieldsAttributeConverter.class)

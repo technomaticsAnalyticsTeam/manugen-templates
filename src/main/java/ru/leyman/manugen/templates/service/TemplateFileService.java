@@ -12,7 +12,7 @@ import ru.leyman.manugen.templates.repo.UserPermissionRepo;
 import java.io.FileNotFoundException;
 import java.util.Set;
 
-import static ru.leyman.manugen.templates.UserContext.getUserId;
+import static ru.leyman.manugen.templates.utils.UserContext.getUserId;
 import static ru.leyman.manugen.templates.domain.enums.Action.*;
 
 @Service
