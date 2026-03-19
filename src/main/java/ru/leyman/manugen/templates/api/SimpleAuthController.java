@@ -44,8 +44,7 @@ public class SimpleAuthController {
         // Find or create user
         User user = userRepo.findByEmail(email)
                 .orElseGet(() -> {
-                    User newUser = new User(login, name != null ? name : login);
-                    newUser.setEmail(email);
+                    User newUser = new User(login, name != null ? name : login, email);
                     return userRepo.save(newUser);
                 });
 
@@ -73,8 +72,7 @@ public class SimpleAuthController {
 
         User user = userRepo.findByEmail("demo@manugen.local")
                 .orElseGet(() -> {
-                    User demoUser = new User("demo", "Demo User");
-                    demoUser.setEmail("demo@manugen.local");
+                    User demoUser = new User("demo", "Demo User", "demo@manugen.local");
                     return userRepo.save(demoUser);
                 });
 
