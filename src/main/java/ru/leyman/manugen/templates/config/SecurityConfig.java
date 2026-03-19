@@ -32,6 +32,7 @@ public class SecurityConfig {
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/auth/**").permitAll()
+                        .requestMatchers("/files/*/public").permitAll()  // Public access for generator service
                         .anyRequest().authenticated())
                 .formLogin(AbstractHttpConfigurer::disable)
                 .oauth2ResourceServer(oauth2 ->

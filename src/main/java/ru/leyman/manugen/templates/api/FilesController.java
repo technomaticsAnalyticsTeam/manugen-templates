@@ -19,6 +19,15 @@ public class FilesController {
         return templateFileService.download(id);
     }
 
+    /**
+     * Public endpoint for serving template files to generator service.
+     * No authentication required - for internal service communication.
+     */
+    @GetMapping(value = "{id}/public", produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
+    public @ResponseBody Resource downloadPublic(@PathVariable Long id) {
+        return templateFileService.download(id);
+    }
+
     @PostMapping("{id}")
     public void upload(@PathVariable Long id, @RequestBody MultipartFile file) {
         templateFileService.upload(id, file);
