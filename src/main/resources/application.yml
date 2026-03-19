@@ -27,3 +27,11 @@ spring:
     multipart:
       enabled: true
       max-file-size: 10MB
+
+# CORS configuration
+app:
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:3000,https://xn--80aggzgc3b.xn--80aewkjhik.xn--p1ai,https://xn--80aa5bcbhel.xn--80aewkjhik.xn--p1ai}
+  # Simple authentication for development/internal use (no OAuth required)
+  simple-auth:
+    enabled: ${SIMPLE_AUTH_ENABLED:false}
